@@ -3742,3 +3742,17 @@ input:focus {
 @media (max-aspect-ratio: 3/2) {
   .approved-home-art, .approved-mode-art { width: 100vw; height: auto; }
 }
+
+
+/* v1.4: approved first-step order, mother tongue before child name */
+.welcome-slogan {
+  margin: 8px 0 12px;
+  color: #a06a26;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+.welcome-languages + .welcome-name {
+  margin-top: 20px;
+}
