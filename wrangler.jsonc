@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "triflaps-transportmittel",
+  "main": "dist/server/index.js",
+  "compatibility_date": "2026-09-27",
+  "assets": {
+    "directory": "dist/client",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "site-creator-d1",
+      "database_id": "073e1775-eeb9-4c5b-8107-92449cfe1b7b"
+    }
+  ]
+}
