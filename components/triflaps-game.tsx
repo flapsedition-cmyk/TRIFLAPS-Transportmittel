@@ -75,7 +75,7 @@ const UI_COPY = {
     welcomeIntro: "Dì a Flaps come ti chiami e scegli la tua lingua.",
     nameLabel: "Come ti chiami?",
     namePlaceholder: "Il tuo nome",
-    languageLabel: "Scegli la tua lingua",
+    languageLabel: "Scegli la tua madrelingua",
     enter: "Inizia l’avventura!",
     hello: "Ciao",
     homePrompt: "Come vuoi giocare oggi?",
@@ -176,7 +176,7 @@ const UI_COPY = {
     welcomeIntro: "Sag Flaps, wie du heißt, und wähle deine Sprache.",
     nameLabel: "Wie heißt du?",
     namePlaceholder: "Dein Name",
-    languageLabel: "Wähle deine Sprache",
+    languageLabel: "Wähle deine Muttersprache",
     enter: "Ab ins Abenteuer!",
     hello: "Hallo",
     homePrompt: "Wie möchtest du heute spielen?",
@@ -277,7 +277,7 @@ const UI_COPY = {
     welcomeIntro: "Tell Flaps your name and choose your language.",
     nameLabel: "What is your name?",
     namePlaceholder: "Your name",
-    languageLabel: "Choose your language",
+    languageLabel: "Choose your native language",
     enter: "Start the adventure!",
     hello: "Hello",
     homePrompt: "How would you like to play today?",
@@ -549,7 +549,8 @@ function WelcomeScreen({
         <div className="welcome-card">
           <Brand />
           <p className="welcome-kicker">TRIFLAPS · TRANSPORTMITTEL</p>
-          <h1>{copy.welcomeTitle}</h1>
+          <h1>TRIFLAPS</h1>
+          <p className="welcome-slogan">Entdecken. Staunen. Wachsen.</p>
           <p className="welcome-intro">{copy.welcomeIntro}</p>
           <form
             onSubmit={(event) => {
@@ -558,16 +559,6 @@ function WelcomeScreen({
               onContinue({ name: safeName(name, copy.defaultPlayer), language });
             }}
           >
-            <label className="welcome-name">
-              <span>{copy.nameLabel}</span>
-              <input
-                value={name}
-                maxLength={24}
-                placeholder={copy.namePlaceholder}
-                autoComplete="given-name"
-                onChange={(event) => setName(event.target.value)}
-              />
-            </label>
             <fieldset className="welcome-languages">
               <legend>{copy.languageLabel}</legend>
               <div>
@@ -585,6 +576,16 @@ function WelcomeScreen({
                 ))}
               </div>
             </fieldset>
+            <label className="welcome-name">
+              <span>{copy.nameLabel}</span>
+              <input
+                value={name}
+                maxLength={24}
+                placeholder={copy.namePlaceholder}
+                autoComplete="given-name"
+                onChange={(event) => setName(event.target.value)}
+              />
+            </label>
             <button className="welcome-enter" type="submit" disabled={!name.trim()}>
               <Play size={20} fill="currentColor" /> {copy.enter}
             </button>
